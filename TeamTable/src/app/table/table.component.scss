@@ -1,12 +1,49 @@
 .table-container {
-    margin: 20px;
-  }
-  
-  .mat-form-field {
-    width: 100%;
-  }
-  
-  table {
-    width: 100%;
-  }
-  
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #3a6a66;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #02466c;
+}
+
+th {
+  background-color: #575551;
+  color: #535252;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e3ddd5;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #d7d2cb;
+}
+
+td {
+  font-size: 16px;
+  color: #000000;
+}
+
+td[data-par="true"] {
+  background-color: #bdb8b1;
+}
+
+td[data-par="false"] {
+  background-color: #cefbf8;
+}
