@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 
+
 export interface Time {
   codigo: number;
   nome: string;
@@ -215,7 +216,6 @@ const TIMES_DATA: Time[] = [
   { codigo: 198, nome: 'Dagenham & Redbridge', anoFundacao: 1992, estadio: 'Victoria Road', serie: 'National League' },
   { codigo: 199, nome: 'Halifax Town', anoFundacao: 2008, estadio: 'The Shay', serie: 'National League' },
   { codigo: 200, nome: 'Torquay United', anoFundacao: 1899, estadio: 'Plainmoor', serie: 'National League' },
-// Outros times...
 ];
 
 @Component({
@@ -231,17 +231,14 @@ export class TableComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit(): void {
-    // Vinculando o MatSort e MatPaginator ao dataSource
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  // Método para aplicar o filtro
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    // Redefine a paginação após filtrar
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }

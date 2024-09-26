@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { getPtBRPaginatorIntl } from './ptbr-paginator-intl';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,  // Certifique-se de importar este módulo
+    BrowserAnimationsModule,  
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [{provide: MatPaginatorIntl, useValue: getPtBRPaginatorIntl()}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
